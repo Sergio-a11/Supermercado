@@ -60,7 +60,7 @@ public abstract class Producto {
         this.cantidad = cantidad;
     }
     
-    public abstract int iva();
+    public abstract double iva();
 
     public double valor()
     {

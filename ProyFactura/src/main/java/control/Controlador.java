@@ -26,21 +26,22 @@ public class Controlador {
         int aux=0;
         objCM.setTitulo("Supermercado");
         do{
-        aux+=1;
+        
         
         listaF.getListado().add(new Factura(objCM.leerTexto("Digite numero de la Factura"),
-                                        new Fecha(objCM.leerEntero("Digite fecha, Dia:"),objCM.leerEntero("Mes:"),objCM.leerEntero("Años:")),
+                                        new Fecha(objCM.leerEntero("Digite fecha\nDia:"),objCM.leerEntero("Mes[numero]:"),objCM.leerEntero("Año:")),
                                         new Cliente(objCM.leerTexto("Digite codigo del cliente:"),objCM.leerTexto("Digite nombre del cliente:"),objCM.leerTexto("Digite telefono del cliente:")),
-                                        new ArrayList<>()));
+                
+                                        new ArrayList<Producto>()));
         do{
-        listaF.getListado().get(aux).getProductos().add(nuevoProducto());  
+        Producto p = nuevoProducto();    
+        listaF.getListado().get(aux).getProductos().add(p);
         }while(objCM.confirmar("Desea registrar otro producto?"));
         
         
-            
+        aux+=1;    
         }while(objCM.confirmar("Desea registrar otra factura?"));
-        objCM.mostrar("Total de la tienda\n");
-        listaF.toString();
+        objCM.mostrar("Total de la tienda\n"+listaF.toString());
     }
     
     public Producto nuevoProducto(){
@@ -49,16 +50,19 @@ public class Controlador {
         Producto objP = null;
         switch(opc){
             case 0:{
-                objP = new Basico(objCM.leerTexto("Digite codigo:"),objCM.leerTexto("Digite nombre:"),
+                objP = new Basico(objCM.leerTexto("Producto Basico\nDigite codigo:"),objCM.leerTexto("Digite nombre:"),
                                   objCM.leerDecimal("Digite Precio Unitario"),objCM.leerEntero("Digite cantidad:"));
+                break;
             }
             case 1:{
-                objP = new General(objCM.leerTexto("Digite codigo:"),objCM.leerTexto("Digite nombre:"),
+                objP = new General(objCM.leerTexto("Producto General\nDigite codigo:"),objCM.leerTexto("Digite nombre:"),
                                   objCM.leerDecimal("Digite Precio Unitario"),objCM.leerEntero("Digite cantidad:"));
+                break;
             }
             case 2:{
-                objP = new Exento(objCM.leerTexto("Digite codigo:"),objCM.leerTexto("Digite nombre:"),
+                objP = new Exento(objCM.leerTexto("Producto Exento\nDigite codigo:"),objCM.leerTexto("Digite nombre:"),
                                   objCM.leerDecimal("Digite Precio Unitario"),objCM.leerEntero("Digite cantidad:"));
+                break;
             }
         }
         return objP;
