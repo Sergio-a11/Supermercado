@@ -60,12 +60,17 @@ public abstract class Producto {
         this.cantidad = cantidad;
     }
     
-    
-    
-    public abstract double iva();
+    public abstract int iva();
 
     public double valor()
     {
         return this.precioU * this.cantidad;
     }
+
+    @Override
+    public String toString() {
+        return "Código: " + cod + "\nNombre: " + nombre + "\nPrecio Unitario: " + precioU + "\nCantidad: " + cantidad;
+    }
+    
+    
 }
