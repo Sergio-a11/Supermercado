@@ -13,7 +13,7 @@ public class Basico extends Producto{
 
     @Override
     public int iva() {
-        return 19;
+        return 5;
     }
 
     public Basico(String cod, String nombre, double precioU, int cantidad) {
