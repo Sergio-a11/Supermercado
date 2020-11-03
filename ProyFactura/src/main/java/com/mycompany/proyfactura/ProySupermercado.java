@@ -5,6 +5,8 @@
  */
 package com.mycompany.proyfactura;
 
+import control.Controlador;
+
 /**
  *
  * @author Usuario
@@ -16,6 +18,8 @@ public class ProySupermercado {
      */
     public static void main(String[] args) {
         // TODO code application logic here
+        Controlador objC = new Controlador();
+        objC.iniciar();
     }
     
 }
