@@ -11,7 +11,7 @@ package modelo;
  */
 public class Exento extends Producto{
     @Override
-    public int iva() {
+    public double iva() {
         return 0;
     }
 

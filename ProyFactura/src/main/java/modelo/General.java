@@ -12,8 +12,8 @@ package modelo;
 public class General extends Producto{
     
     @Override
-    public int iva() {
-        return 19;
+    public double iva() {
+        return 0.19;
     }
 
     public General(String cod, String nombre, double precioU, int cantidad) {

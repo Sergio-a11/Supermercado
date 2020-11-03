@@ -29,8 +29,9 @@ public class Controlador {
         aux+=1;
         
         listaF.getListado().add(new Factura(objCM.leerTexto("Digite numero de la Factura"),
-                                        new Fecha(objCM.leerEntero("Digite fecha, Dia:"),objCM.leerEntero("Mes:"),objCM.leerEntero("Años:")),
+                                        new Fecha(objCM.leerEntero("Digite fecha\nDia:"),objCM.leerEntero("Mes[numero]:"),objCM.leerEntero("Año:")),
                                         new Cliente(objCM.leerTexto("Digite codigo del cliente:"),objCM.leerTexto("Digite nombre del cliente:"),objCM.leerTexto("Digite telefono del cliente:")),
+                
                                         new ArrayList<>()));
         do{
         listaF.getListado().get(aux).getProductos().add(nuevoProducto());  

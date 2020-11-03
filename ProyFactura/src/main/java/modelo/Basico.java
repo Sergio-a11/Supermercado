@@ -12,8 +12,8 @@ package modelo;
 public class Basico extends Producto{
 
     @Override
-    public int iva() {
-        return 5;
+    public double iva() {
+        return 0.05;
     }
 
     public Basico(String cod, String nombre, double precioU, int cantidad) {

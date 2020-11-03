@@ -65,7 +65,23 @@ public class Factura {
 
     @Override
     public String toString() {
-        return "Factura" + "\nNumero:" + nro + "\nFecha:"+fecha.toString()+"\nTotal Factura:"+totalFactura()+"\nTotal IVA:"+iva();
+        String tipo, fac = "\n";
+        for (int i = 0; i < productos.size(); i++) {
+            if(productos.get(i) instanceof Basico)
+            {
+                tipo = "Básico";
+            }
+            else if(productos.get(i) instanceof General)
+            {
+                tipo = "General";
+            }
+            else
+            {
+                tipo = "Exento";
+            }
+            fac += "\nProducto " + tipo + productos.get(i).toString() + "\t" + productos.get(i).valor();
+        }
+        return "Factura" + "\nNumero:" + nro + "\nFecha:"+fecha.toString()+ fac +"\nTotal Factura:"+totalFactura()+"\nTotal IVA:"+iva();
     }
     
     public double totalFactura(){
@@ -83,7 +99,7 @@ public class Factura {
     public double iva(){
         double sumIva = 0;
         for (int i = 0; i < productos.size(); i++) {
-            sumIva+=productos.get(i).iva();
+            sumIva+=productos.get(i).valor() * productos.get(i).iva();
         }
         return sumIva;
     }
