@@ -79,9 +79,9 @@ public class Factura {
             {
                 tipo = "Exento";
             }
-            fac += "\nProducto " + tipo + productos.get(i).toString() + "\t" + productos.get(i).valor();
+            fac += "\nProducto " + tipo + " IVA: " + (productos.get(i).iva()*100) + "%\n" +  productos.get(i).toString() + "Valor: " + productos.get(i).valor();
         }
-        return "Factura" + "\nNumero:" + nro + "\nFecha:"+fecha.toString()+ fac +"\nTotal Factura:"+totalFactura()+"\nTotal IVA:"+iva();
+        return "\nFactura Número: " + nro + "\nFecha:"+fecha.toString()+ fac +"\n\nTotal Factura:"+totalFactura()+"\nTotal IVA:"+iva() + "\n";
     }
     
     public double totalFactura(){

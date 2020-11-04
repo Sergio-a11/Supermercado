@@ -69,7 +69,7 @@ public abstract class Producto {
 
     @Override
     public String toString() {
-        return "Código: " + cod + "\nNombre: " + nombre + "\nPrecio Unitario: " + precioU + "\nCantidad: " + cantidad;
+        return "Código: " + cod + "\nNombre: " + nombre + "\nPrecio Unitario: " + precioU + "\nCantidad: " + cantidad + "\n";
     }
     
     
