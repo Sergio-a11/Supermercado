@@ -36,6 +36,7 @@ public class Tienda {
         for (int i = 0; i < listado.size(); i++) {
             msj+=listado.get(i).toString();
         }
+        msj+= "\nTotal de ventas:"+totalVentas()+"\nTotal Ivas: "+totalIVAS();
         return msj;
     }
     
